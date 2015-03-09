@@ -34,6 +34,17 @@ std::ostream& operator<< (std::ostream& os, const IPAddress& addr) {
     return os;
 }
 
+bool IPAddress::operator== (const IPAddress& addr) const {
+    return (m_a == addr.m_a) &&
+           (m_b == addr.m_b) &&
+           (m_c == addr.m_c) &&
+           (m_d == addr.m_d);
+}
+
+bool IPAddress::operator!= (const IPAddress& addr) const {
+    return !(operator==(addr));
+}
+
 std::istream& operator>> (std::istream& is, IPAddress& addr) {
     // TODO check correctness of input
     // (now I'm assuming the input is correct: "A.B.C.D")

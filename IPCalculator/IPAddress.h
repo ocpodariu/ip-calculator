@@ -9,6 +9,9 @@ class IPAddress {
      IPAddress operator& (const IPAddress& addr) const;
      IPAddress operator| (const IPAddress& addr) const;
      IPAddress operator~ () const;
+     
+     bool operator== (const IPAddress& addr) const;
+     bool operator!= (const IPAddress& addr) const;
 
      friend std::ostream& operator<< (std::ostream& os, const IPAddress& addr);
      friend std::istream& operator>> (std::istream& is, IPAddress& addr);
