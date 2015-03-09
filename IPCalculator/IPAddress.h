@@ -16,6 +16,8 @@ class IPAddress {
      friend std::ostream& operator<< (std::ostream& os, const IPAddress& addr);
      friend std::istream& operator>> (std::istream& is, IPAddress& addr);
 
+     void setAddress (unsigned char a, unsigned char b, unsigned char c, unsigned char d);
+
  private:
     unsigned char m_a;
 	unsigned char m_b;
