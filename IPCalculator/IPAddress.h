@@ -19,8 +19,8 @@ class IPAddress {
      void setAddress (unsigned char a, unsigned char b, unsigned char c, unsigned char d);
 
  private:
-    unsigned char m_a;
-	unsigned char m_b;
-	unsigned char m_c;
-	unsigned char m_d;
+     unsigned char m_a;
+     unsigned char m_b;
+     unsigned char m_c;
+     unsigned char m_d;
 };
