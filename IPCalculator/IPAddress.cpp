@@ -4,6 +4,27 @@
 
 IPAddress::IPAddress (unsigned char a, unsigned char b, unsigned char c, unsigned char d) : m_a(a), m_b(b), m_c(c), m_d(d) {}
 
+IPAddress IPAddress::operator& (const IPAddress& addr) const {
+    return IPAddress(m_a & addr.m_a,
+                     m_b & addr.m_b,
+                     m_c & addr.m_c,
+                     m_d & addr.m_d);
+}
+
+IPAddress IPAddress::operator| (const IPAddress& addr) const {
+    return IPAddress(m_a | addr.m_a,
+                     m_b | addr.m_b,
+                     m_c | addr.m_c,
+                     m_d | addr.m_d);
+}
+
+IPAddress IPAddress::operator~ () const {
+    return IPAddress(~this->m_a,
+                     ~this->m_b,
+                     ~this->m_c,
+                     ~this->m_d);
+}
+
 std::ostream& operator<< (std::ostream& os, const IPAddress& addr) {
     os << (int) addr.m_a << '.'
        << (int) addr.m_b << '.'
