@@ -25,15 +25,6 @@ IPAddress IPAddress::operator~ () const {
                      ~this->m_d);
 }
 
-std::ostream& operator<< (std::ostream& os, const IPAddress& addr) {
-    os << (int) addr.m_a << '.'
-       << (int) addr.m_b << '.'
-       << (int) addr.m_c << '.'
-       << (int) addr.m_d;
-
-    return os;
-}
-
 bool IPAddress::operator== (const IPAddress& addr) const {
     return (m_a == addr.m_a) &&
            (m_b == addr.m_b) &&
@@ -43,6 +34,15 @@ bool IPAddress::operator== (const IPAddress& addr) const {
 
 bool IPAddress::operator!= (const IPAddress& addr) const {
     return !(operator==(addr));
+}
+
+std::ostream& operator<< (std::ostream& os, const IPAddress& addr) {
+    os << (int) addr.m_a << '.'
+       << (int) addr.m_b << '.'
+       << (int) addr.m_c << '.'
+       << (int) addr.m_d;
+
+    return os;
 }
 
 std::istream& operator>> (std::istream& is, IPAddress& addr) {
