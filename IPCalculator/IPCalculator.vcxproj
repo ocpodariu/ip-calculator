@@ -11,10 +11,12 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="InternetAddress.cpp" />
     <ClCompile Include="IPAddress.cpp" />
     <ClCompile Include="Main.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="InternetAddress.h" />
     <ClInclude Include="IPAddress.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">

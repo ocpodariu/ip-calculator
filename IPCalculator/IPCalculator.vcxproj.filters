@@ -21,9 +21,15 @@
     <ClCompile Include="IPAddress.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="InternetAddress.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="IPAddress.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="InternetAddress.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
