@@ -1,3 +1,6 @@
+#ifndef _IP_ADDRESS_H_
+#define _IP_ADDRESS_H_
+
 #include <iostream>
 
 // An IPv4 address has the following form:
@@ -24,3 +27,5 @@ class IPAddress {
      unsigned char m_c;
      unsigned char m_d;
 };
+
+#endif // _IPADDRESS_H_
