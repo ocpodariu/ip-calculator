@@ -31,6 +31,10 @@ class InternetAddress {
     // Details about the network to which this Internet address belongs
     IPAddress m_network_address;
     IPAddress m_broadcast_address;
+
+    // Calculates the network and broadcast addresses corresponding
+    // to this Internet address
+    void calculateNB ();
 };
 
 #endif // _INTERNET_ADDRESS_H
