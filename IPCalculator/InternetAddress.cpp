@@ -15,3 +15,19 @@ std::istream& operator>> (std::istream& is, InternetAddress& addr) {
 
     return is;
 }
+
+IPAddress InternetAddress::getIPAddress () const { return m_address; }
+
+IPAddress InternetAddress::getSubnetMask () const { return m_subnet_mask; }
+
+void InternetAddress::setIPAddress (IPAddress& ip) { m_address = ip; }
+
+void InternetAddress::setIPAddress (unsigned char a, unsigned char b, unsigned char c, unsigned char d) {
+    m_address.setAddress(a, b, c, d);
+}
+
+void InternetAddress::setSubnetMask (IPAddress& mask) { m_subnet_mask = mask; }
+
+void InternetAddress::setSubnetMask (unsigned char a, unsigned char b, unsigned char c, unsigned char d) {
+    m_subnet_mask.setAddress(a, b, c, d);
+}

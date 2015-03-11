@@ -15,6 +15,15 @@ class InternetAddress {
     friend std::ostream& operator<< (std::ostream& os, const InternetAddress& addr);
 	friend std::istream& operator>> (std::istream& is, InternetAddress& addr);
 
+    IPAddress getIPAddress () const;
+    IPAddress getSubnetMask () const;
+
+    void setIPAddress (IPAddress& ip);
+    void setIPAddress (unsigned char a, unsigned char b, unsigned char c, unsigned char d);
+    
+    void setSubnetMask (IPAddress& mask);
+    void setSubnetMask (unsigned char a, unsigned char b, unsigned char c, unsigned char d);
+
  private:
     IPAddress m_address;
     IPAddress m_subnet_mask;
