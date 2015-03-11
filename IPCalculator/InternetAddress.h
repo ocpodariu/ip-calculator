@@ -27,6 +27,10 @@ class InternetAddress {
  private:
     IPAddress m_address;
     IPAddress m_subnet_mask;
+
+    // Details about the network to which this Internet address belongs
+    IPAddress m_network_address;
+    IPAddress m_broadcast_address;
 };
 
 #endif // _INTERNET_ADDRESS_H

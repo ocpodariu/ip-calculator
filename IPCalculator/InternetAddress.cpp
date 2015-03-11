@@ -3,8 +3,10 @@
 InternetAddress::InternetAddress (IPAddress& ip, IPAddress& mask) : m_address(ip), m_subnet_mask(mask) {}
 
 std::ostream& operator<< (std::ostream& os, const InternetAddress& addr) {
-    os << "IP: " << addr.m_address     << std::endl;
-    os << "SN: " << addr.m_subnet_mask << std::endl;
+    os << "IP: " << addr.m_address           << std::endl;
+    os << "SN: " << addr.m_subnet_mask       << std::endl;
+    os << "NA: " << addr.m_network_address   << std::endl;
+    os << "BA: " << addr.m_broadcast_address << std::endl;
 
     return os;
 }
