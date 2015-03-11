@@ -17,6 +17,8 @@ class InternetAddress {
 
     IPAddress getIPAddress () const;
     IPAddress getSubnetMask () const;
+    IPAddress getNetworkAddress () const;
+    IPAddress getBroadcastAddress () const;
 
     void setIPAddress (IPAddress& ip);
     void setIPAddress (unsigned char a, unsigned char b, unsigned char c, unsigned char d);

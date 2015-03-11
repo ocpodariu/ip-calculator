@@ -26,6 +26,10 @@ IPAddress InternetAddress::getIPAddress () const { return m_address; }
 
 IPAddress InternetAddress::getSubnetMask () const { return m_subnet_mask; }
 
+IPAddress InternetAddress::getNetworkAddress () const { return m_network_address; }
+
+IPAddress InternetAddress::getBroadcastAddress () const { return m_broadcast_address; }
+
 void InternetAddress::setIPAddress (IPAddress& ip) {
     m_address = ip;
     calculateNB();
