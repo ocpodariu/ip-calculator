@@ -26,6 +26,10 @@ class InternetAddress {
     void setSubnetMask (IPAddress& mask);
     void setSubnetMask (unsigned char a, unsigned char b, unsigned char c, unsigned char d);
 
+    bool isNetworkAddress () const;
+    bool isBroadcastAddress () const;
+    bool isHostAddress () const;
+
  private:
     IPAddress m_address;
     IPAddress m_subnet_mask;

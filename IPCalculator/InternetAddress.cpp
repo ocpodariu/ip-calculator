@@ -50,6 +50,12 @@ void InternetAddress::setSubnetMask (unsigned char a, unsigned char b, unsigned 
     calculateNB();
 }
 
+bool InternetAddress::isNetworkAddress () const { return m_address == m_network_address; }
+
+bool InternetAddress::isBroadcastAddress () const { return m_address == m_broadcast_address; }
+
+bool InternetAddress::isHostAddress () const { return (!isNetworkAddress()) && (!isBroadcastAddress()); }
+
 void InternetAddress::calculateNB () {
     // NA = (ip_address) AND (subnet_mask)
     m_network_address = m_address & m_subnet_mask;
