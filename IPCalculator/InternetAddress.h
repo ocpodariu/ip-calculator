@@ -30,6 +30,10 @@ class InternetAddress {
     bool isBroadcastAddress () const;
     bool isHostAddress () const;
 
+    // Calculates the total number of host IPs of the network
+    // corresponding to this Internet address
+    unsigned int getNrHosts () const;
+
  private:
     IPAddress m_address;
     IPAddress m_subnet_mask;
