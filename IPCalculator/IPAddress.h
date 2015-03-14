@@ -27,6 +27,9 @@ class IPAddress {
      // Sets the IP address using a 32-bit integer representation
      void setAddress (unsigned int addr);
 
+     // Returns the corresponding 32-bit integer representation
+     unsigned int toUInteger() const;
+
  private:
      unsigned char m_a;
      unsigned char m_b;

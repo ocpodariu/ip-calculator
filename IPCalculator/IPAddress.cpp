@@ -146,3 +146,49 @@ void IPAddress::setAddress (unsigned int addr) {
         addr = addr >> 1;
     }
 }
+
+unsigned int IPAddress::toUInteger() const {
+    // Create local copies of all 4 bytes
+    unsigned char a = m_a;
+    unsigned char b = m_b;
+    unsigned char c = m_c;
+    unsigned char d = m_d;
+
+    // "addr" is a 32 bit integer = [b31 b30 ... b1 b0],
+    // that will be formed by joining the 4 bytes (A, B, C, D):
+    //      addr = [A7 ... A0 B7 ... B0 C7 ... C0 D7 ... D0].
+    // The change-of-base (2 -> 10) formula will be used.
+    unsigned int addr = 0;
+
+    int i, last_bit;
+
+    // Process last byte (D)
+    for (i = 0; i < 8; i++) {
+        last_bit = d & 1;
+        addr += pow(2, i) * last_bit;
+        d = d >> 1;
+    }
+
+    // Process third byte (C)
+    for (i = 8; i < 16; i++) {
+        last_bit = c & 1;
+        addr += pow(2, i) * last_bit;
+        c = c >> 1;
+    }
+
+    // Process second byte (B)
+    for (i = 16; i < 24; i++) {
+        last_bit = b & 1;
+        addr += pow(2, i) * last_bit;
+        b = b >> 1;
+    }
+
+    // Process first byte (A)
+    for (i = 24; i < 32; i++) {
+        last_bit = a & 1;
+        addr += pow(2, i) * last_bit;
+        a = a >> 1;
+    }
+
+    return addr;
+}
