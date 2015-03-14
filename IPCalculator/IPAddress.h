@@ -23,6 +23,9 @@ class IPAddress {
 
      void setAddress (unsigned char a, unsigned char b, unsigned char c, unsigned char d);
 
+     // Sets the IP address using a 32-bit integer representation
+     void setAddress (unsigned int addr);
+
  private:
      unsigned char m_a;
      unsigned char m_b;
