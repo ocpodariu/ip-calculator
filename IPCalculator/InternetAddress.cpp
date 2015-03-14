@@ -35,6 +35,11 @@ void InternetAddress::setIPAddress (IPAddress& ip) {
     calculateNB();
 }
 
+void InternetAddress::setIPAddress (unsigned int ip) {
+    m_address.setAddress(ip);
+    calculateNB();
+}
+
 void InternetAddress::setIPAddress (unsigned char a, unsigned char b, unsigned char c, unsigned char d) {
     m_address.setAddress(a, b, c, d);
     calculateNB();
@@ -42,6 +47,11 @@ void InternetAddress::setIPAddress (unsigned char a, unsigned char b, unsigned c
 
 void InternetAddress::setSubnetMask (IPAddress& mask) {
     m_subnet_mask = mask;
+    calculateNB();
+}
+
+void InternetAddress::setSubnetMask (unsigned int mask) {
+    m_subnet_mask.setAddress(mask);
     calculateNB();
 }
 

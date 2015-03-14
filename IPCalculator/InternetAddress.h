@@ -21,9 +21,11 @@ class InternetAddress {
     IPAddress getBroadcastAddress () const;
 
     void setIPAddress (IPAddress& ip);
+    void setIPAddress (unsigned int ip);
     void setIPAddress (unsigned char a, unsigned char b, unsigned char c, unsigned char d);
     
     void setSubnetMask (IPAddress& mask);
+    void setSubnetMask (unsigned int mask);
     void setSubnetMask (unsigned char a, unsigned char b, unsigned char c, unsigned char d);
 
     bool isNetworkAddress () const;
