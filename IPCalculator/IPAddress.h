@@ -10,6 +10,7 @@ class IPAddress {
      friend class InternetAddress;
 
      IPAddress (unsigned char a = 0, unsigned char b = 0, unsigned char c = 0, unsigned char d = 0);
+     IPAddress (unsigned int addr);
 
      IPAddress operator& (const IPAddress& addr) const;
      IPAddress operator| (const IPAddress& addr) const;

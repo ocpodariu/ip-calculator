@@ -4,6 +4,8 @@
 
 IPAddress::IPAddress (unsigned char a, unsigned char b, unsigned char c, unsigned char d) : m_a(a), m_b(b), m_c(c), m_d(d) {}
 
+IPAddress::IPAddress (unsigned int addr) { setAddress(addr); }
+
 IPAddress IPAddress::operator& (const IPAddress& addr) const {
     return IPAddress(m_a & addr.m_a,
                      m_b & addr.m_b,
