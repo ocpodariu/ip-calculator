@@ -147,7 +147,7 @@ void IPAddress::setAddress (unsigned int addr) {
     }
 }
 
-unsigned int IPAddress::toUInteger() const {
+unsigned int IPAddress::toUInteger () const {
     // Create local copies of all 4 bytes
     unsigned char a = m_a;
     unsigned char b = m_b;
@@ -188,6 +188,36 @@ unsigned int IPAddress::toUInteger() const {
         last_bit = a & 1;
         addr += pow(2, i) * last_bit;
         a = a >> 1;
+    }
+
+    return addr;
+}
+
+IPAddress IPAddress::nextIPAddress () const {
+    IPAddress addr(m_a, m_b, m_c, m_d);
+
+    if (m_d == 255) {
+        addr.m_d = 0;
+
+        if (m_c == 255) {
+            addr.m_c = 0;
+
+            if (m_b == 255) {
+                addr.m_b = 0;
+
+                if (addr.m_a == 255) {
+                    addr.m_a = 0;
+                } else { // m_a < 255
+                    addr.m_a++;
+                }
+            } else { // m_b < 255
+                addr.m_b++;
+            }
+        } else { // m_c < 255
+            addr.m_c++;
+        }
+    } else { // m_d < 255
+        addr.m_d++;
     }
 
     return addr;

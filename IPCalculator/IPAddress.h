@@ -28,7 +28,10 @@ class IPAddress {
      void setAddress (unsigned int addr);
 
      // Returns the corresponding 32-bit integer representation
-     unsigned int toUInteger() const;
+     unsigned int toUInteger () const;
+
+     // Returns the next IP address, following this one i.e adding +1 to it
+     IPAddress nextIPAddress () const;
 
  private:
      unsigned char m_a;
