@@ -14,10 +14,12 @@
     <ClCompile Include="InternetAddress.cpp" />
     <ClCompile Include="IPAddress.cpp" />
     <ClCompile Include="Main.cpp" />
+    <ClCompile Include="Util.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="InternetAddress.h" />
     <ClInclude Include="IPAddress.h" />
+    <ClInclude Include="Util.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{FF679F8B-8C03-4BEC-A78C-B5726C57797D}</ProjectGuid>

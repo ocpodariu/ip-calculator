@@ -1,5 +1,5 @@
-#ifndef _INTERNET_ADDRESS_H
-#define _INTERNET_ADDRESS_H
+#ifndef _INTERNET_ADDRESS_H_
+#define _INTERNET_ADDRESS_H_
 
 #include "IPAddress.h"
 
@@ -49,4 +49,4 @@ class InternetAddress {
     void calculateNB ();
 };
 
-#endif // _INTERNET_ADDRESS_H
+#endif // _INTERNET_ADDRESS_H_
