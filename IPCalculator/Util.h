@@ -19,8 +19,11 @@ class Util {
     // Subnet a network into multiple smaller subnetworks.
     // Each subnetwork (i) needs to accommodate hosts[i] hosts.
     // The resulting vector contains all the subnetworks.
-    static std::vector<InternetAddress> subnetNetwork (InternetAddress network, std::vector<int> hosts);
     static std::vector<InternetAddress> subnetNetwork (const std::string& inputFilename);
+    static std::vector<InternetAddress> subnetNetwork (InternetAddress network, std::vector<int> hosts);
+    
+    static void subnetNetwork (const std::string& inputFilename, const std::string& outputFilename);
+    static void subnetNetwork (InternetAddress network, std::vector<int> hosts, const std::string& outputFilename);
 };
 
 #endif // _UTIL_H_

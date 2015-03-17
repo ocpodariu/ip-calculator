@@ -78,3 +78,40 @@ std::vector<InternetAddress> Util::subnetNetwork (const std::string& inputFilena
 
     return subnetNetwork(InternetAddress(ip, mask), nr_hosts);
 }
+
+void Util::subnetNetwork (const std::string& inputFilename, const std::string& outputFilename) {
+    std::ifstream f(inputFilename);
+
+    // Original network
+    IPAddress ip, mask;
+    f >> ip >> mask;
+    
+    // (n) subnetworks each requiring (nr_hosts[i]) host IPs
+    int n;
+    std::vector<int> nr_hosts;
+
+    f >> n;
+
+    int x;
+    for (int i = 0; i < n; i++)
+        if (f >> x)
+            nr_hosts.push_back(x);
+
+    subnetNetwork(InternetAddress(ip, mask), nr_hosts, outputFilename);
+}
+
+void Util::subnetNetwork (InternetAddress network, std::vector<int> hosts, const std::string& outputFilename) {
+    std::vector<InternetAddress> subnetworks;
+    subnetworks = subnetNetwork(network, hosts);
+
+    std::ofstream f(outputFilename);
+    
+    f << "Original network" << std::endl;
+    f << network << std::endl;
+    f << "--------------------" << std::endl << std::endl;
+
+    for (unsigned int i = 0; i < subnetworks.size(); i++) {
+        f << "Subnetwork #" << i + 1 << std::endl;
+        f << subnetworks[i] << std::endl;
+    }
+}
