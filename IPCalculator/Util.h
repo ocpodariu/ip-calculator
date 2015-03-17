@@ -4,6 +4,7 @@
 #include "InternetAddress.h"
 
 #include <vector>
+#include <string>
 
 // Helper class that includes methods for IP network
 // processes such as identifying the type of an address.
@@ -19,6 +20,7 @@ class Util {
     // Each subnetwork (i) needs to accommodate hosts[i] hosts.
     // The resulting vector contains all the subnetworks.
     static std::vector<InternetAddress> subnetNetwork (InternetAddress network, std::vector<int> hosts);
+    static std::vector<InternetAddress> subnetNetwork (const std::string& inputFilename);
 };
 
 #endif // _UTIL_H_

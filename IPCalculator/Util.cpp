@@ -1,5 +1,6 @@
 #include "Util.h"
 
+#include <fstream>
 #include <algorithm>
 
 int Util::identifyAddress(const InternetAddress& addr) {
@@ -55,4 +56,25 @@ std::vector<InternetAddress> Util::subnetNetwork (InternetAddress network, std::
     }
 
     return subnetworks;
+}
+
+std::vector<InternetAddress> Util::subnetNetwork (const std::string& inputFilename) {
+    std::ifstream f(inputFilename);
+
+    // Original network
+    IPAddress ip, mask;
+    f >> ip >> mask;
+    
+    // (n) subnetworks each requiring (nr_hosts[i]) host IPs
+    int n;
+    std::vector<int> nr_hosts;
+
+    f >> n;
+
+    int x;
+    for (int i = 0; i < n; i++)
+        if (f >> x)
+            nr_hosts.push_back(x);
+
+    return subnetNetwork(InternetAddress(ip, mask), nr_hosts);
 }
