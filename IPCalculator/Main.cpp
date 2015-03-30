@@ -7,6 +7,7 @@
 #include <iomanip>
 
 void displayHelp ();
+void displayLicense ();
 
 int main () {
     // Indicates whether the program should exit
@@ -118,6 +119,8 @@ int main () {
                     }
                 }
             }
+        } else if (option == "license") {
+            displayLicense();
         } else if (option == "exit") {
             std::cout << "Exiting..." << std::endl;
             exit = true;
@@ -141,6 +144,10 @@ void displayHelp () {
     std::cout << "(network / broadcast / host)." << std::endl;
 
     std::cout << std::endl;
+    std::cout << "\t" << std::setw(16) << std::left << "license";
+    std::cout << "Display license information." << std::endl;
+
+    std::cout << std::endl;
     std::cout << "\t" << std::setw(16) << std::left << "subnet";
     std::cout << "Subnet a larger network into multiple" << std::endl;
     std::cout << "\t" << std::setw(16) << " ";
@@ -149,4 +156,31 @@ void displayHelp () {
     std::cout << std::endl;
     std::cout << "\t" << std::setw(16) << std::left << "exit";
     std::cout << "Exit the program." << std::endl;
+}
+
+void displayLicense () {
+    std::cout << "The MIT License (MIT)" << std::endl << std::endl;
+    std::cout << "Copyright (c) 2015 PODARIU Ovidiu" << std::endl << std::endl;
+
+    std::cout << "Permission is hereby granted, free of charge, to any person " << std::endl
+              << "obtaining a copy of this software and associated documentation " << std::endl
+              << "files (the \"Software\"), to deal in the Software without " << std::endl
+              << "restriction, including without limitation the rights to use, " << std::endl
+              << "copy, modify, merge, publish, distribute, sublicense, and/or " << std::endl
+              << "sell copies of the Software, and to permit persons to whom " << std::endl
+              << "the Software is furnished to do so, subject to the following " << std::endl
+              << "conditions:" << std::endl << std::endl;
+
+    std::cout << "The above copyright notice and this permission notice shall " << std::endl
+              << "be included in all copies or substantial portions of the " << std::endl
+              << "Software." << std::endl << std::endl;
+
+    std::cout << "THE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY " << std::endl
+              << "KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE " << std::endl
+              << "WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR " << std::endl
+              << "PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS " << std::endl
+              << "OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR " << std::endl
+              << "OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR " << std::endl
+              << "OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE " << std::endl
+              << "SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE." << std::endl;
 }
