@@ -4,6 +4,9 @@
 
 #include <iostream>
 #include <fstream>
+#include <iomanip>
+
+void displayHelp ();
 
 int main () {
     // Indicates whether the program should exit
@@ -11,13 +14,16 @@ int main () {
 
     std::string option;
 
-    std::cout << "IP Calculator v1.0" << std::endl;
+    std::cout << "IP Calculator v1.0" << std::endl << std::endl;
+    std::cout << "Type \"help\" to display all available options." << std::endl;
     
     while (!exit) {
         std::cout << std::endl << ">> ";
         std::cin >> option; std::cin.ignore();
 
-        if (option == "identify") {
+        if (option == "help") {
+            displayHelp();
+        } else if (option == "identify") {
             IPAddress ip, mask;
 
             std::cout << "Enter IP address:  "; std::cin >> ip;
@@ -121,4 +127,26 @@ int main () {
     }
 
     return 0;
+}
+
+void displayHelp () {
+    std::cout << std::endl;
+    std::cout << "\t" << std::setw(16) << std::left << "help";
+    std::cout << "Display all available options." << std::endl;
+
+    std::cout << std::endl;
+    std::cout << "\t" << std::setw(16) << std::left << "identify";
+    std::cout << "Identify the type of an IP address" << std::endl;
+    std::cout << "\t" << std::setw(16) << " ";
+    std::cout << "(network / broadcast / host)." << std::endl;
+
+    std::cout << std::endl;
+    std::cout << "\t" << std::setw(16) << std::left << "subnet";
+    std::cout << "Subnet a larger network into multiple" << std::endl;
+    std::cout << "\t" << std::setw(16) << " ";
+    std::cout << "smaller ones." << std::endl;
+
+    std::cout << std::endl;
+    std::cout << "\t" << std::setw(16) << std::left << "exit";
+    std::cout << "Exit the program." << std::endl;
 }
