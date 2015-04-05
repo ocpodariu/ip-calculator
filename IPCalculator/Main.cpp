@@ -8,7 +8,7 @@
 
 void displayHelp ();
 void displayLicense ();
-void displaySubnetInputFileDescription ();
+void displaySubnetInputFileStructure ();
 
 int main () {
     // Indicates whether the program should exit
@@ -121,7 +121,7 @@ int main () {
                 }
             }
         } else if (option == "subnet-input") {
-            displaySubnetInputFileDescription();
+            displaySubnetInputFileStructure();
         } else if (option == "license") {
             displayLicense();
         } else if (option == "exit") {
@@ -199,7 +199,7 @@ void displayLicense () {
               << "SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE." << std::endl;
 }
 
-void displaySubnetInputFileDescription () {
+void displaySubnetInputFileStructure () {
     std::cout << "Structure of the subnet input file:" << std::endl << std::endl;
 
     std::cout << "\t#" << std::setfill('-') << std::setw(52) << "" << "#" << std::endl;
