@@ -1,0 +1,9 @@
+<original-network-ip-address>
+<original-network-subnet-mask>
+
+<number-of-subnetworks>
+
+<number-of-host-ip's-necessarry-for-subnetwork-1>
+<number-of-host-ip's-necessarry-for-subnetwork-2>
+...
+<number-of-host-ip's-necessarry-for-subnetwork-n>
