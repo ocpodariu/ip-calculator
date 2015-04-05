@@ -8,11 +8,12 @@
 
 void displayHelp ();
 void displayLicense ();
+void displaySubnetInputFileDescription ();
 
 int main () {
     // Indicates whether the program should exit
     bool exit = false;
-
+    
     std::string option;
 
     std::cout << "IP Calculator v1.0" << std::endl << std::endl;
@@ -119,6 +120,8 @@ int main () {
                     }
                 }
             }
+        } else if (option == "subnet-input") {
+            displaySubnetInputFileDescription();
         } else if (option == "license") {
             displayLicense();
         } else if (option == "exit") {
@@ -133,29 +136,40 @@ int main () {
 }
 
 void displayHelp () {
+    std::cout << std::left;
+
     std::cout << std::endl;
-    std::cout << "\t" << std::setw(16) << std::left << "help";
+    std::cout << "\t" << std::setw(16) << "help";
     std::cout << "Display all available options." << std::endl;
 
     std::cout << std::endl;
-    std::cout << "\t" << std::setw(16) << std::left << "identify";
+    std::cout << "\t" << std::setw(16) << "identify";
     std::cout << "Identify the type of an IP address" << std::endl;
     std::cout << "\t" << std::setw(16) << " ";
     std::cout << "(network / broadcast / host)." << std::endl;
 
     std::cout << std::endl;
-    std::cout << "\t" << std::setw(16) << std::left << "license";
+    std::cout << "\t" << std::setw(16) << "license";
     std::cout << "Display license information." << std::endl;
 
     std::cout << std::endl;
-    std::cout << "\t" << std::setw(16) << std::left << "subnet";
+    std::cout << "\t" << std::setw(16) << "subnet";
     std::cout << "Subnet a larger network into multiple" << std::endl;
     std::cout << "\t" << std::setw(16) << " ";
     std::cout << "smaller ones." << std::endl;
 
     std::cout << std::endl;
-    std::cout << "\t" << std::setw(16) << std::left << "exit";
+    std::cout << "\t" << std::setw(16) << "subnet-input";
+    std::cout << "Display the input file structure for" << std::endl;
+    std::cout << "\t" << std::setw(16) << " ";
+    std::cout << "subnetting." << std::endl;
+
+    std::cout << std::endl;
+    std::cout << "\t" << std::setw(16) << "exit";
     std::cout << "Exit the program." << std::endl;
+
+    // Reset stream (deactivate left alignment)
+    std::cout << std::internal;
 }
 
 void displayLicense () {
@@ -183,4 +197,30 @@ void displayLicense () {
               << "OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR " << std::endl
               << "OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE " << std::endl
               << "SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE." << std::endl;
+}
+
+void displaySubnetInputFileDescription () {
+    std::cout << "Structure of the subnet input file:" << std::endl << std::endl;
+
+    std::cout << "\t#" << std::setfill('-') << std::setw(52) << "" << "#" << std::endl;
+    std::cout << "\t| " << std::setw(50) << std::setfill(' ') << "" << " |"  << std::endl;
+
+    std::cout << std::setfill(' ') << std::left;
+    std::cout << "\t| " << std::setw(50) << "<original-network-ip-address>" << " |" << std::endl;
+    std::cout << "\t| " << std::setw(50) << "<original-network-subnet-mask>" << " |" << std::endl;
+    std::cout << "\t| " << std::setw(50) << "" << " |"  << std::endl;
+
+    std::cout << "\t| " << std::setw(50) << "<number-of-subnetworks>" << " |" << std::endl;
+    std::cout << "\t| " << std::setw(50) << "" << " |"  << std::endl;
+
+    std::cout << "\t| " << std::setw(50) << "<number-of-host-ip's-necessarry-for-subnetwork-1>" <<  " |" << std::endl;
+    std::cout << "\t| " << std::setw(50) << "<number-of-host-ip's-necessarry-for-subnetwork-2>" <<  " |" << std::endl;
+    std::cout << "\t| " << std::setw(50) << "..." <<  " |" << std::endl;
+    std::cout << "\t| " << std::setw(50) << "<number-of-host-ip's-necessarry-for-subnetwork-n>" <<  " |" << std::endl;
+    
+    std::cout << "\t| " << std::setw(50) << "" << " |"  << std::endl;
+    std::cout << "\t#" << std::setfill('-') << std::setw(52) << "" << "#" << std::endl;
+
+    // Reset stream (deactivate left alignment)
+    std::cout << std::setfill(' ') << std::internal;
 }
