@@ -10,7 +10,7 @@ Network subnetting utility primarily designed to help students better understand
 #### Scenario
 You have been asked to design a network addressing scheme for your company's intranetwork, that will allow an 80% growth in all departments.
 The original network address is: `116.40.0.0 /16`
-![Intranetwork](https://cloud.githubusercontent.com/assets/5685993/6997682/5472cf10-dbce-11e4-8317-4af86c92dc2e.png)
+![Intranetwork](https://cloud.githubusercontent.com/assets/5685993/6997814/aff310f2-dbd3-11e4-8345-dc31963b86ce.png)
 
 #### Determine number of necessary host IPs
 The first step is to determine how many subnetworks the intranetwork has, and the corresponding number of necessary host IPs for each of them.
